@@ -18,7 +18,7 @@ def move_Tank(motor_A, motor_B):
 		move_A_and_B.on(motor_A, motor_B)
 
 try:
-	if __name__ == '__main__'
+	if __name__ == '__main__':
 		move_Tank(2, 3)
 
 except:
