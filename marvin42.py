@@ -8,18 +8,27 @@ from ev3dev2.sensor.lego import ColorSensor
 import time
 
 # creating some variable
-move_A_and_B = MoveTank(OUTPUT_A, OUTPUT_B)
+move_A_and_B = MoveTank(OUTPUT_A, OUTPUT_B, )
 mA = LargeMotor(OUTPUT_A)
 mB = LargeMotor(OUTPUT_B)
 
 # this function will  move the the tank front and  back, left and right
 def move_Tank(motor_A, motor_B):
 	while True:
-		move_A_and_B.on(motor_A, motor_B)
+		# creating object and saving it a variable to get distance
+		ir = InfraredSensor()
+		distance = ir.value()
+		if distance > 30 :
+			move_A_and_B.on(motor_A, motor_B)
+
+		elif distance < 30:
+			move_A_and_B.off()
 
 try:
 	if __name__ == '__main__':
-		move_Tank(2, 3)
+		motor_a = 1
+		motor_b = 2
+		move_Tank(motor_a, motor_b)
 
 except:
 	# this  will set all the the motors to 0
