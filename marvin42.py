@@ -14,6 +14,7 @@ mB = LargeMotor(OUTPUT_B)
 
 # this function will  move tank if the distance is biger than 30 cm
 def move_Tank(motor_A, motor_B):
+
 	while True:
 		# creating object and saving it a variable to get distance
 		ir = InfraredSensor()
@@ -27,8 +28,9 @@ def move_Tank(motor_A, motor_B):
 			move_A_and_B.off()
 
 # this function will stop the tank
-def stop_tank_ ():
+def stop_tank():
 	move_A_and_B.reset()
+
 
 try:
 	if __name__ == '__main__':
