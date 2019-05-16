@@ -19,11 +19,11 @@ def move_Tank(option, motor_A, motor_B):
 		# creating object and saving it a variable to get distance
 		ir = InfraredSensor()
 		distance = ir.value()
-		if option == "run" && distance > 30:
+		if option == "run" and distance > 30:
 			# this will move the tank  front and back
 			move_A_and_B.on(motor_A, motor_B)
 
-		elif option == "stop" || distance < 30:
+		elif option == "stop" or distance < 30:
 			# here we are stoping the tank
 			move_A_and_B.off()
 			# reset the value to 0
