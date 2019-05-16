@@ -13,24 +13,23 @@ motorPair = MoveTank(OUTPUT_A, OUTPUT_B, )
 #mB = LargeMotor(OUTPUT_B)
 
 # this function will  move tank if the distance is biger than 30 cm
-def move_Tank(option, motor_A, motor_B):
+def move_Tank(motor_A, motor_B):
 	# creating object and saving it a variable to get distance
 	#ir = InfraredSensor()
 	#distance = ir.value()
-	if option == "run":
-		# this will move the tank  front and back
-		motorPair.on(motor_A, motor_B)
 
-	elif option == "stop":
-		# here we are stoping the tank
-		motorPair.off()
-		# reset the value to 0
-		motorPair.reset()
+	# this will move the tank  front and back
+	motorPair.on(motor_A, motor_B)
 
+def stop_tank():
+    # here we are stoping the tank
+    motorPair.off()
+    # reset the value to 0
+    motorPair.reset()
 
 if __name__ == '__main__':
     try:
-        move_Tank(str(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))
+        move_Tank(int(sys.argv[2]), int(sys.argv[3]))
     except:
 	    # this  will set all the the motors to 0
         motorPair.off()
