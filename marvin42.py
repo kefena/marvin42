@@ -29,7 +29,7 @@ def stop_tank():
 
 if __name__ == '__main__':
     try:
-        move_Tank(int(sys.argv[2]), int(sys.argv[3]))
+        move_tank(int(sys.argv[2]), int(sys.argv[3]))
     except:
 	    # this  will set all the the motors to 0
         motorPair.off()
